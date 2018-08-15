@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}{{ tag_slug }} {% endblock title %}
+
+{% block wrapper %}
+<div class="wrapper">
+  <div class="title container list">
+    <h2>{{ tag_slug }}</h2>
+  </div>
+  {% include "interview/interview_list.html" with object_list=object_list page_obj=page_obj %}
+</div>
+{% endblock wrapper %}

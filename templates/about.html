@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}关于{% endblock title %}
+
+{% block wrapper %}
+<div class="wrapper">
+  <div class="container clearfix">
+    <div class="main half">
+      <div class="content bordered ningen">
+        <h3>Ningen 是什么？</h3>
+        <p>Ningen 是一个无人问津的 Django Web 应用，是「人间」的采访项目。致力于：</p>
+        <p>🙈 试验性地用全新方法阐述黑猩猩能利用树枝去捕食洞穴内的蚂蚁的原理。</p>
+        <p>🤑 公开展示部分土豪的财产，为打倒土豪、劫富济贫收集证据。</p>
+        <p><small class="muted">源码托管在 <a href="https://github.com/jinkanhq/ningen">Github</a> 上。</small></p>
+      </div>
+    </div>
+    <div class="main half">
+      <div class="content bordered ningen">
+        <h3>常见问题</h3>
+        <dl>
+          <dt>🙄 如何选择采访对象？</dt>
+          <dd>我们会根据鸽笼原理，通过基于土豆的人工智能「GLaDOS」分析存储在 /dev/random 的 42EB 数据。最终在未知的时间，由某位没有放鸽子的管理员进行伯努利实验，挑选「人间黑手」内定的人选。</dd>
+          <dt>🍉 采访的问题会是哪些？</dt>
+          <dd>
+            <ol>
+              <li>简要介绍一下自己，并且谈谈正在做什么？</li>
+              <li>你使用的硬件有？</li>
+              <li>你使用的软件有？</li>
+              <li>你梦想中的设备是怎么样的？</li>
+              <li class="muted"><del>「人间黑手」脱口而出的糟糕问题。</del></li>
+            </ol>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock wrapper %}

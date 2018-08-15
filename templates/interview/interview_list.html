@@ -1,0 +1,33 @@
+{% for interview in object_list %}
+<div class="title container interview">
+  <div class="content bordered ningen">
+    <div class="avatar" style="background-image:url({{ interview.person.avatar.url }})"></div>
+    <h2 class="person name">
+        <a href="{% url 'interview-detail' interview.slug %}">{{ interview.person.name }}</a>
+    </h2>
+    <span class="person title muted">{{ interview.person.title }} ({{ interview.person.company }})</span>
+    <div class="meta muted">
+      采访于 {{ interview.create_on }}，分类为
+      {% for tag in interview.tags.all %}
+      <a class="tag" href="{% url 'interview-tag-list' tag.slug %}">{{ tag.slug }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% empty %}
+{% endfor %}
+<div class="pagination container">
+  <div class="content clearfix">
+    <div class="previous">
+      {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">更新的采访&rarr;</a>
+      {% endif %}
+    </div>
+    <div class="next">
+      {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number }}">&larr;更早的采访</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+</div>

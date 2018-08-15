@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}首页{% endblock title %}
+
+{% block wrapper %}
+<div class="wrapper">
+  {% include "interview/interview_list.html" with object_list=object_list page_obj=page_obj %}
+</div>
+{% endblock wrapper %}

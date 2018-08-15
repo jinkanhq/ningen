@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}采访{% endblock title %}
+
+{% block wrapper %}
+<div class="wrapper">
+  <div class="container clearfix">
+      <div class="main content archives">
+        <h2>采访</h2>
+        <p>截至目前共有 {{ total_count }} 篇采访，涉及物件 {{ item_count }} 种。</p>
+        <h3>按年份：</h3>
+        <ul>
+          {% for year_group in years %}
+          <li><a href="{% url 'interview-year-list' year_group.year|date:'Y' %}">{{ year_group.year|date:'Y' }}</a> ({{ year_group.count }})</li>
+          {% endfor %}
+        </ul>
+        <h3>按分类：</h3>
+        {% for tag in tags %}
+        <a class="tag" href="{% url 'interview-tag-list' tag.slug %}">{{ tag.slug }}</a>
+        {% empty %}
+        <span class="muted">暂无分类。</span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock wrapper %}
