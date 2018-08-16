@@ -8,9 +8,9 @@
 <div class="wrapper">
   <div class="title container interview">
     <div class="content bordered ningen">
-      <div class="avatar" style="background-image:url({{ interview.person.avatar.url }})"></div>
+      <div class="avatar" style="background-image:url({{ interview.avatar.url }})"></div>
       <h2 class="person name">{{ interview.person.name }}</h2>
-      <span class="person title muted">{{ interview.person.title }} ({{ interview.person.company }})</span>
+      <span class="person title muted">{{ interview.title }} ({{ interview.company }})</span>
       <div class="meta muted">
         采访于 {{ interview.create_on }}，分类为
         {% for tag in interview.tags.all %}
