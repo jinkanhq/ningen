@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.db import models
+from django.forms import Textarea
 
 from ningen.interview.models import Interview, Item, Person, Tag
 
@@ -10,8 +12,8 @@ class TagAdmin(admin.ModelAdmin):
 
 @admin.register(Person)
 class PersonAdmin(admin.ModelAdmin):
-    list_display = ('name', 'title', 'company', 'education')
-    list_filter = ('company', )
+    list_display = ('slug', 'name', 'gender', 'email')
+    list_filter = ('gender', )
 
 
 @admin.register(Item)
@@ -26,4 +28,8 @@ class ItemAdmin(admin.ModelAdmin):
 
 @admin.register(Interview)
 class InterviewAdmin(admin.ModelAdmin):
-    list_display = ('slug', 'person', 'create_on')
+    list_display = ('slug', 'person', 'title', 'company', 'education', 'create_on')
+    list_filter = ('company', 'education', 'create_on')
+    formfield_overrides = {
+        models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols': 40})},
+    }
