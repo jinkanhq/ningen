@@ -31,5 +31,5 @@ class InterviewAdmin(admin.ModelAdmin):
     list_display = ('slug', 'person', 'title', 'company', 'education', 'create_on')
     list_filter = ('company', 'education', 'create_on')
     formfield_overrides = {
-        models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols': 40})},
+        models.TextField: {'widget': Textarea(attrs={'rows':40, 'cols': 100})},
     }

@@ -39,7 +39,7 @@ class Person(models.Model):
 class Item(models.Model):
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=32, verbose_name='名称')
-    vendor = models.CharField(max_length=32, verbose_name='厂商')
+    vendor = models.CharField(max_length=32, blank=True, verbose_name='厂商')
     description = models.TextField(verbose_name='描述')
     link = models.URLField(verbose_name='链接')
 
