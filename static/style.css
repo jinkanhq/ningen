@@ -176,10 +176,14 @@ ol {
   margin: 0;
   width: 132px;
   height: 46px;
-  color: rgba(0,0,0,0);
   background-image: url('img/jinkan_logo_hori_purple.png');
   background-repeat: no-repeat;
   background-size: 100% auto;
+  float: left;
+}
+
+.logo>a {
+  color: rgba(0,0,0,0);
 }
 
 .topbar {
@@ -358,8 +362,38 @@ a.tag:hover {
 }
 
 @media screen and (max-width: 1000px) {
+  .wrapper {
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+  .footer {
+    text-align: center;
+    font-size: 12px;
+  }
   .container {
     width: 100%;
-    min-width: 600px;
+  }
+  .interview .meta {
+    float: none;
+  }
+  .logo {
+    float: none;
+  }
+  .topbar nav {
+    width: 100%;
+    height: auto;
+    float: none;
+    margin-top: 30px;
+  }
+  .topbar ul {
+    width: 100%;
+    position: relative;
+    bottom: auto;
+    right: auto;
+  }
+  .topbar nav li {
+  }
+  .half {
+    width: 100%;
   }
 }
