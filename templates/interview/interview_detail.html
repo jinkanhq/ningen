@@ -2,6 +2,14 @@
 {% load static %}
 {% load markdown %}
 
+{% block meta %}
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ interview.person.name }}">
+<meta property="og:description" content="{{ interview.title }} ({{ interview.company }})，采访于 {{ interview.create_on }}。">
+<meta property="og:image" content="{{ interview.avatar.url }}">
+<meta property="og:url" content="{% url 'interview-detail' interview.slug %}">
+{% endblock meta %}
+
 {% block title %}{{ interview.person.name }}{% endblock title %}
 
 {% block wrapper %}
