@@ -4,9 +4,9 @@
 
 {% block meta %}
 <meta property="og:type" content="article" />
-<meta property="og:title" content="{{ interview.person.name }}">
-<meta property="og:description" content="{{ interview.title }} ({{ interview.company }})，采访于 {{ interview.create_on }}。">
-<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ interview.avatar.url }}">
+<meta itemprop="name" property="og:title" content="{{ interview.person.name }}">
+<meta itemprop="description" property="og:description" content="{{ interview.title }} ({{ interview.company }})，采访于 {{ interview.create_on }}。">
+<meta itemprop="image" property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ interview.avatar.url }}">
 <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{% url 'interview-detail' interview.slug %}">
 {% endblock meta %}
 
